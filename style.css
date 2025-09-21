@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #000;
+  color: #0ff;
+  font-family: Arial, sans-serif;
+}
+
+.robot-face {
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+  background: #111;
+  border-radius: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8), inset 0 0 40px #0ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.eye {
+  width: 80px;
+  height: 80px;
+  background: #0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  0%, 92%, 100% { height: 80px; }
+  95% { height: 10px; }
+}
+
+.mouth {
+  width: 60%;
+  max-width: 250px;
+  height: 40px;
+  background: #0f0;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #0f0;
+  transform: scaleY(1);
+  transition: 0.1s;
+}
+
+.mouth.talking {
+  animation: speak 0.2s infinite alternate;
+}
+
+@keyframes speak {
+  from { transform: scaleY(0.5); }
+  to { transform: scaleY(1.4); }
+}
+
+#status {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #0ff;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 0 10px #0ff;
+}
+
+button:hover {
+  background: #0cc;
+}
